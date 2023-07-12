@@ -19,7 +19,7 @@
           <a class="nav-link active" aria-current="page" href="/toko">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/toko/about">About</a>
+          <a class="nav-link" href="/about">About</a>
         </li>
         <!-- <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -33,10 +33,19 @@
           </ul>
         </li> -->
       </ul>
+      
+
+      
+
+      @if (Auth::user()->role != 'admin')
+        <a href="{{ route('produk.admin')}}" class="btn btn-primary mx-3 my-3">ADMIN</a>
+      @else
       <form class="d-flex">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-primary" type="submit">Search</button>
       </form>
+      @endif
+
     </div>
   </div>
 </nav>
